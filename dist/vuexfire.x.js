@@ -3,6 +3,12 @@
  * (c) 2017 Eduardo San Martin Morote
  * Released under the MIT License.
  */
+(function (global, factory) {
+	typeof exports === 'object' && typeof module !== 'undefined' ? factory(exports) :
+	typeof define === 'function' && define.amd ? define(['exports'], factory) :
+	(factory((global.VuexFire = {})));
+}(this, (function (exports) { 'use strict';
+
 /**
  * Find the index for an object with given key.
  *
@@ -350,4 +356,9 @@ function firebaseAction (action) {
   }
 }
 
-export { firebaseMutations, firebaseAction };
+exports.firebaseMutations = firebaseMutations;
+exports.firebaseAction = firebaseAction;
+
+Object.defineProperty(exports, '__esModule', { value: true });
+
+})));
